@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+body {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+}
+
+#app {
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+}
+
+.title {
+  text-align: left;
+  color: white;
+  font-size: 3rem;
+  margin: 0 25px;
+  float: bottom;
+}
+
+.hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: column wrap;
+      flex-flow: column wrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  position: relative;
+  background-image: url("http://i.imgur.com/eXXYujx.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  width: 100vw;
+}
+
+.quote {
+  width: 300px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.quote-author {
+  color: white;
+  margin: 0 25px;
+  font-size: 1.5rem;
+}
+
+.quote-button {
+  margin: 10px 30px;
+  background: white;
+  color: black;
+  width: 100px;
+  height: 35px;
+  text-align: center;
+  cursor: pointer;
+  line-height: 35px;
+  border-radius: 5px;
+}
+.quote-button:hover {
+  background: #cccccc;
+}
+
+.pagination {
+  box-sizing: border-box;
+  bottom: 0;
+  position: absolute;
+  width: 100vw;
+  height: 10vh;
+  background: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.pagination > div {
+  margin: 0 20px;
+}
+
+.bubbles {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.bubbles > .bubble {
+  margin: 0 5px;
+  cursor: pointer;
+  display: block;
+  width: 10px;
+  border: black 1px solid;
+  height: 10px;
+  border-radius: 50%;
+}
+.bubbles > .bubble.is-active {
+  background: #d9d9d9;
+}
+
+.article-wrapper {
+  width: 100vw;
+  height: 90vh;
+}
+.article-wrapper > p {
+  margin: 15px 10px;
+  font-size: 1.25rem;
+  color: #1E1E20;
+}
+.article-wrapper > p:first-child::first-letter {
+  font-size: 6rem;
+  float: left;
+  margin: -15px 10px;
+  padding: 0;
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+}
+
+.content-wrapper {
+  width: 200vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  right: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.content-wrapper .hero, .content-wrapper article-wrapper {
+  position: relative;
+}
+
+.comment-wrapper {
+  position: absolute;
+  background: white;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  -webkit-transform: translateY(100%) scale(0.5);
+          transform: translateY(100%) scale(0.5);
+  -webkit-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
+}
+.comment-wrapper.is-show {
+  -webkit-transform: translateY(0%) scale(1);
+          transform: translateY(0%) scale(1);
+}
+.comment-wrapper > ul {
+  list-style: none;
+  padding: 0;
+}
+.comment-wrapper > p {
+  text-align: center;
+  font-weight: bold;
+}
+
+.pagination-comment {
+  cursor: pointer;
+  margin: 0 15px;
+}
+.pagination-comment:hover {
+  color: lightblue;
+}
+
+.close-comment-page {
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  margin: 10px;
+  font-size: 2rem;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.close-comment-page:hover {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.comment {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 20px 10px;
+}
+
+.comment-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.comment-profile {
+  margin: 0 10px;
+}
+
+.comment-detail {
+  maring: 10px 0;
+}

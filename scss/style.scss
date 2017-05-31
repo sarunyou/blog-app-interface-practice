@@ -1,0 +1,183 @@
+$pagination-height : 10vh;
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+body {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+}
+
+#app {
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+}
+
+.title {
+  text-align: left;
+  color: white;
+  font-size: 3rem;
+  margin: 0 25px;
+  float: bottom;
+}
+
+.hero {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-end;
+  position: relative;
+  background: {
+    image: url('http://i.imgur.com/eXXYujx.jpg');
+    size: cover;
+    repeat: no-repeat;
+    position: center top;
+    
+  };
+  width: 100vw;
+}
+
+.quote {
+  width: 300px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.quote-author {
+  color: white;
+  margin: 0 25px;
+  font-size: 1.5rem;
+}
+
+.quote-button {
+  margin: 10px 30px;
+  background: white;
+  color: black;
+  width: 100px;
+  height: 35px;
+  text-align: center;
+  cursor: pointer;
+  line-height: 35px;
+  border-radius: 5px;
+  &:hover {
+    background: darken(white, 20%);
+  }
+  
+}
+
+.pagination {
+  box-sizing: border-box;
+  bottom: 0;
+  position: absolute;
+  // height: 10vh;
+  width: 100vw;
+  height: $pagination-height;
+  background: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  > div {
+    margin: 0 20px;
+  }
+}
+.bubbles {
+  display: flex;
+  > .bubble {
+  margin: 0 5px;
+    cursor: pointer;
+  display: block;
+  width: 10px;
+  border: black 1px solid;
+  height: 10px;
+  border-radius: 50%;
+    &.is-active {
+      background: darken(white, 15%);
+    }
+  }
+}
+
+.article-wrapper {
+  width: 100vw;
+  height: 90vh;
+  > p {
+    margin: 15px 10px;
+     font-size: 1.25rem;
+    color: #1E1E20;
+
+    &:first-child::first-letter {
+    font-size: 6rem;
+    float: left ;
+    margin: -15px 10px ;
+    padding: 0;
+    transform: translateY(10px);
+    }
+   }
+}
+
+.content-wrapper {
+  width: 200vw;
+  display: flex;
+  position: relative;
+  right: 0; 
+  transition: all 0.5s ease-in-out;
+  .hero, article-wrapper {
+    position: relative;
+  }
+}
+
+.comment-wrapper {
+  position: absolute;
+  background: white;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  transform: translateY(100%) scale(0.5);
+    transition: all 0.5s ease-in;
+    &.is-show {
+      transform: translateY(0%) scale(1)
+    }
+  > ul {
+    list-style: none;
+    padding: 0;
+  }
+  > p {
+    text-align: center;
+    font-weight: bold;
+  }
+  }
+
+.pagination-comment {
+  cursor: pointer;
+  margin: 0 15px; 
+  &:hover {
+    color: lightblue;
+  }
+}
+
+.close-comment-page {
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  margin: 10px;
+  font-size: 2rem;
+  transform: rotate(0deg);
+  transition:all 0.5s ease-in-out;
+  &:hover {
+    transform: rotate(180deg);
+  }
+}
+
+.comment {
+  display: flex;
+  margin: 20px 10px;
+}
+
+.comment-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-profile {
+  margin: 0 10px;
+}
+
+.comment-detail {
+  maring: 10px 0;
+}

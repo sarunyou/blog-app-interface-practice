@@ -1,0 +1,108 @@
+const App = () => {
+  return (
+  <div className="app">
+    <div className="content-wrapper">  
+      <div className="hero"> 
+        <div className="quote"> 
+           <p className="quote-author">MARK MANSON</p>
+           <h1 className="title">THE<br/> DARK SIDE <br/>OF THE <br/> DIGITAL <br/>NOMAD</h1>
+            <div className="quote-button">TRAVEL</div>
+        </div>
+      </div>
+      <Content />
+     
+    </div>
+    
+    <Pagination/>
+      <CommentPage />
+  </div>
+  )}
+
+const Content = () => {
+  return (
+    <div className="article-wrapper">
+      <p> The following is the original piece I wrote for CNN last year about location independent entrepreneurs, also known as “digital nomads.” Since the whole “Work Online, Travel the World and Live the Dream” angle had been done to death in a million places, I decided to go the other direction and show the dark side of being a digital nomad — the challenges one faces, the emotional pitfalls, the social sacrifices.</p>
+      <p>
+Predictably, CNN hated it. The editors hacked it to pieces and asked me to rewrite sections to make it less gloomy. And since they’re CNN and I’m just an asshole with a book about smut, I said OK.
+      </p>
+    </div>
+  )
+}
+
+const Pagination = () => {
+  function closeCommentPage(e) {
+    console.log('comment page is showing');
+    const commentWrapperEle = document.querySelector('.comment-wrapper');
+    commentWrapperEle.classList.add('is-show');
+  }
+  
+  return (
+  <div className="pagination">
+    <div>CLOSE</div>
+    <Bubbles />
+    <i onClick={closeCommentPage} className="pagination-comment fa fa-comment-o" aria-hidden="true"></i>
+  </div>
+)
+}
+
+const CommentPage = () => {
+  function showCommentPage(e) {
+    const commentWrapperEle = document.querySelector('.comment-wrapper');
+    commentWrapperEle.classList.remove('is-show');
+  }
+  return (
+  <div className="comment-wrapper"> 
+   <i onClick={showCommentPage} className="close-comment-page fa fa-times" aria-hidden="true">
+      </i>
+      <p> COMMENTS (45) </p>
+      <ul> 
+        <li className="comment">
+          <div className="comment-profile">
+           <i className="fa fa-user fa-4x" aria-hidden="true"></i>
+          </div>
+          <div className="comment-content"> 
+            <div className="comment-owner"><strong>jonathandunn</strong> &#8226; 3 hours ago</div>
+            <div className="comment-detail">Good point! There are travel bloggers. Then there are freelancers: coders mainly.</div>
+          </div>
+        </li>
+        <li className="comment">
+          <div className="comment-profile">
+           <i className="fa fa-user fa-4x" aria-hidden="true"></i>
+          </div>
+          <div className="comment-content"> 
+          <div className="comment-owner"><strong>jonathandunn</strong> &#8226; 3 hours ago</div>
+            <div className="comment-detail">Good point! There are travel bloggers. Then there are freelancers: coders mainly.</div>
+          </div>
+        </li>
+      </ul>
+    </div>)
+}
+
+const Bubbles = () => {
+  const handleClick = (e) => {
+    e.preventDefault();
+    const contentWrapperEle = document.querySelector('.content-wrapper');
+    const bubblesEle = document.querySelectorAll('.bubble');
+    bubblesEle.forEach((b, i) => {
+      if ( b == e.target) {
+        contentWrapperEle.style.right = i * 100 + 'vw';
+      } else {
+         b.classList.remove('is-active');
+      }
+    })
+    e.target.classList.add('is-active');
+   
+  }
+
+  return (
+  <div className="bubbles">
+    <span onClick={handleClick} className="bubble is-active"/> 
+    <span onClick={handleClick} className="bubble"/>   
+  </div>
+)
+}
+  
+
+
+
+ReactDOM.render(<App />, document.getElementById('app'));
